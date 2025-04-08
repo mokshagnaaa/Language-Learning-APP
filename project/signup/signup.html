@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="full">
+        <form> 
+            <h1>Sign Up</h1>
+            <div class="inputbox">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="inputbox">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="inputbox"> 
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="login-link">
+                <p>Already have an account? <a href="#">Sign In</a></p>
+            </div>
+        </form>
+        <div class="google-signup">
+            <p>Or sign up with</p>
+            <button class="btn-google"><i class='bx bxl-google'></i> Sign Up with Google</button>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('bx-hide-pass');
+        });
+    </script>
+</body>
+</html>
